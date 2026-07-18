@@ -4,10 +4,10 @@
 <meta charset="UTF-8"/>
 <script>if(location.protocol!=='https:'&&location.hostname!=='localhost')location.replace('https://'+location.host+location.pathname+location.search);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>สบายพาณิชย์ — ร้านค้าออนไลน์</title>
+<title>Geargao — ร้านค้าออนไลน์</title>
 <style>
 /* ============================================================
-   SABAI COMMERCE — Lazada-style Blue/White Theme
+   GEARGAO — Lazada-style Blue/White Theme
    ============================================================ */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -355,7 +355,7 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
   <div class="topbar-inner">
     <span>📍 ส่งทั่วไทย | รับสินค้าที่หน้าร้าน หรือ จัดส่งพัสดุ</span>
     <div style="display:flex;gap:16px">
-      <a href="#">ติดตามออเดอร์</a>
+      <a href="#" onclick="event.preventDefault();openTrackOrder()">ติดตามออเดอร์</a>
       <a href="#">ช่วยเหลือ</a>
       <a href="#">เกี่ยวกับเรา</a>
     </div>
@@ -367,10 +367,10 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
   <div class="header-inner">
     <!-- Logo -->
     <div class="logo-area">
-      <img class="logo-img" src="logo.svg" alt="สบายพาณิชย์" onerror="this.style.display='none'"/>
+      <img class="logo-img" src="geargao-header-logo.svg" alt="Geargao" onerror="this.style.display='none'"/>
       <div class="logo-text">
-        <h1>สบายพาณิชย์</h1>
-        <p>SABAI COMMERCE · OFFICIAL STORE</p>
+        <h1>Geargao</h1>
+        <p>GEARGAO.COM · OFFICIAL STORE</p>
       </div>
     </div>
     <!-- Search -->
@@ -415,7 +415,7 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <h2>ร้านสบายพาณิชย์<br/><span>ครบ จบ ที่เดียว</span></h2>
+      <h2>Geargao<br/><span>ครบ จบ ที่เดียว</span></h2>
       <p>สินค้าคุณภาพ ราคาดี ส่งเร็ว ทั่วไทย<br/>เลือกสินค้าที่ต้องการ สั่งง่าย รับของไว</p>
       <div class="hero-cta">
         <button class="btn-primary" onclick="document.getElementById('productSection').scrollIntoView({behavior:'smooth'})">
@@ -532,7 +532,7 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
     <div class="product-grid" id="productGrid">
       <div class="loading">
         <div class="spinner"></div>
-        <p style="color:var(--gray-text);font-weight:600">กำลังโหลดสินค้าจากร้านสบายพาณิชย์...</p>
+        <p style="color:var(--gray-text);font-weight:600">กำลังโหลดสินค้าจาก Geargao...</p>
       </div>
     </div>
     <!-- Pagination placeholder -->
@@ -544,7 +544,7 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">🛒 ร้านสบายพาณิชย์</div>
+      <div class="footer-brand">🛒 Geargao</div>
       <div class="footer-desc" id="storeAddress">ร้านค้าออนไลน์คุณภาพ สินค้าพร้อมส่ง บริการดี ราคาเป็นมิตร</div>
     </div>
     <div class="footer-col">
@@ -559,7 +559,7 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
     <div class="footer-col">
       <h4>บริการลูกค้า</h4>
       <ul>
-        <li><a href="#">ติดตามออเดอร์</a></li>
+        <li><a href="#" onclick="event.preventDefault();openTrackOrder()">ติดตามออเดอร์</a></li>
         <li><a href="#">นโยบายคืนสินค้า</a></li>
         <li><a href="#">วิธีการชำระเงิน</a></li>
         <li><a href="#">ช่วยเหลือ / FAQ</a></li>
@@ -576,7 +576,7 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
     </div>
   </div>
   <div class="footer-bottom">
-    © 2024 ร้านสบายพาณิชย์ · สงวนลิขสิทธิ์ · Powered by Sabai Commerce System
+    © 2024 Geargao · สงวนลิขสิทธิ์ · Powered by Geargao Commerce System
   </div>
 </footer>
 
@@ -651,6 +651,8 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
         <textarea id="custNote" rows="2" placeholder="หมายเหตุเพิ่มเติม (ไม่บังคับ)"></textarea>
       </div>
 
+      <input type="text" id="custWebsite" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
+
       <div class="checkout-step" style="margin-top:20px"><span>2</span> สรุปรายการสินค้า</div>
       <div class="order-summary" id="checkoutSummary"></div>
 
@@ -688,12 +690,43 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
   <div class="success-box">
     <div class="success-icon">🎉</div>
     <h2>สั่งซื้อสำเร็จ!</h2>
-    <p>ขอบคุณที่ไว้วางใจร้านสบายพาณิชย์<br/>เราจะติดต่อยืนยันออเดอร์กลับไปเร็วๆ นี้</p>
+    <p>ขอบคุณที่ไว้วางใจ Geargao<br/>เราจะติดต่อยืนยันออเดอร์กลับไปเร็วๆ นี้</p>
     <div class="order-number" id="orderNumber">—</div>
+    <div id="qrSection" style="display:none;margin-bottom:16px">
+      <p style="font-size:13px;color:var(--gray-text);margin-bottom:8px">สแกนจ่ายผ่าน PromptPay</p>
+      <img id="qrImage" src="" alt="PromptPay QR" style="width:200px;height:200px;border:1px solid var(--gray-border);border-radius:10px"/>
+      <p id="qrAmount" style="font-size:16px;font-weight:800;color:var(--red);margin-top:8px"></p>
+    </div>
     <p style="font-size:12px;color:#9E9E9E;margin-bottom:20px">กรุณาบันทึกเลขออเดอร์ไว้เพื่อติดตามสถานะ</p>
     <button class="btn-primary" onclick="closeSuccess()" style="width:100%;justify-content:center">
       🛍️ ช้อปต่อ
     </button>
+  </div>
+</div>
+
+<!-- TRACK ORDER MODAL -->
+<div class="checkout-modal" id="trackModal">
+  <div class="checkout-box" style="max-width:480px">
+    <div class="checkout-header">
+      <span style="font-size:20px">🔍</span>
+      <h3>ติดตามออเดอร์</h3>
+      <button style="background:none;color:white;border:none;font-size:22px;cursor:pointer" onclick="closeTrackOrder()">✕</button>
+    </div>
+    <div class="checkout-body">
+      <div class="form-group">
+        <label>เลขที่ออเดอร์ *</label>
+        <input type="text" id="trackOrderNo" placeholder="เช่น WEB-202607-00001"/>
+      </div>
+      <div class="form-group">
+        <label>เบอร์โทรศัพท์ที่ใช้สั่งซื้อ *</label>
+        <input type="tel" id="trackPhone" placeholder="0812345678"/>
+      </div>
+      <div id="trackResult"></div>
+    </div>
+    <div class="checkout-footer">
+      <button class="btn-back" onclick="closeTrackOrder()">ปิด</button>
+      <button class="btn-place-order" onclick="checkOrderStatus()">🔍 ตรวจสอบสถานะ</button>
+    </div>
   </div>
 </div>
 
@@ -702,10 +735,10 @@ footer{background:var(--blue-dark);color:#90CAF9;margin-top:40px}
 
 <script>
 // ============================================================
-//  CONFIG — เปลี่ยน slug ตรงนี้ให้ตรงกับร้านสบายพาณิชย์
+//  CONFIG — slug นี้คือ org slug จริงในฐานข้อมูล Sales-Account (ห้ามแก้ตามชื่อแบรนด์)
 // ============================================================
 const API_BASE = 'https://sales-account-git-main-scale-up-s-projects2.vercel.app';
-const STORE_SLUG = 'sabai-panich'; // slug ของร้านสบายพาณิชย์
+const STORE_SLUG = 'sabai-panich'; // org slug ใน Sales-Account — แบรนด์หน้าร้านคือ Geargao แต่ slug ฐานข้อมูลยังเป็นชื่อเดิม
 
 // ============================================================
 //  STATE
@@ -1234,28 +1267,130 @@ function selectPayment(el, method) {
   selectedPayment = method;
 }
 
-function placeOrder() {
+const PAYMENT_METHOD_MAP = { transfer:'TRANSFER', qr:'QR', cash:'CASH', cod:'COD' };
+
+async function placeOrder() {
   const name = document.getElementById('custName').value.trim();
   const phone = document.getElementById('custPhone').value.trim();
+  const email = document.getElementById('custEmail').value.trim();
   const address = document.getElementById('custAddress').value.trim();
+  const note = document.getElementById('custNote').value.trim();
+  const website = document.getElementById('custWebsite').value; // honeypot — ต้องว่าง
 
   if (!name) { showToast('กรุณากรอกชื่อ-นามสกุล','error'); return; }
   if (!phone) { showToast('กรุณากรอกเบอร์โทรศัพท์','error'); return; }
   if (!address) { showToast('กรุณากรอกที่อยู่จัดส่ง','error'); return; }
   if (!cart.length) { showToast('กรุณาเพิ่มสินค้าในตะกร้า','error'); return; }
 
-  const orderNo = 'SAB-' + Date.now().toString(36).toUpperCase();
-  document.getElementById('orderNumber').textContent = `หมายเลขออเดอร์: ${orderNo}`;
+  const paymentMethod = PAYMENT_METHOD_MAP[selectedPayment] || 'TRANSFER';
+  const placeBtn = document.querySelector('.btn-place-order');
+  const originalBtnHtml = placeBtn ? placeBtn.innerHTML : '';
+  if (placeBtn) { placeBtn.disabled = true; placeBtn.textContent = 'กำลังส่งออเดอร์...'; }
 
-  // Clear
-  cart = []; saveCart();
-  closeCheckout();
-  document.getElementById('successModal').classList.add('open');
+  try {
+    const res = await fetch(`${API_BASE}/api/public/orders`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        slug: STORE_SLUG,
+        customer: { name, phone, email: email || undefined, address, note: note || undefined },
+        paymentMethod,
+        items: cart.map(i => ({ productId: i.id, qty: i.qty })),
+        website,
+      }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'สั่งซื้อไม่สำเร็จ กรุณาลองใหม่');
+
+    document.getElementById('orderNumber').textContent = `หมายเลขออเดอร์: ${data.orderNo}`;
+
+    const qrSection = document.getElementById('qrSection');
+    if (paymentMethod === 'TRANSFER' || paymentMethod === 'QR') {
+      try {
+        const qrRes = await fetch(`${API_BASE}/api/public/orders/qr`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug: STORE_SLUG, amount: data.totalAmount }),
+        });
+        const qrData = await qrRes.json();
+        if (qrRes.ok && qrData.qrDataUrl) {
+          document.getElementById('qrImage').src = qrData.qrDataUrl;
+          document.getElementById('qrAmount').textContent = `ยอดที่ต้องชำระ ฿${data.totalAmount.toLocaleString('th-TH')}`;
+          qrSection.style.display = 'block';
+        } else {
+          qrSection.style.display = 'none';
+        }
+      } catch (e) {
+        qrSection.style.display = 'none';
+      }
+    } else {
+      qrSection.style.display = 'none';
+    }
+
+    cart = []; saveCart();
+    closeCheckout();
+    document.getElementById('successModal').classList.add('open');
+  } catch (e) {
+    showToast(e.message || 'สั่งซื้อไม่สำเร็จ กรุณาลองใหม่', 'error');
+  } finally {
+    if (placeBtn) { placeBtn.disabled = false; placeBtn.innerHTML = originalBtnHtml; }
+  }
 }
 
 function closeSuccess() {
   document.getElementById('successModal').classList.remove('open');
+  document.getElementById('qrSection').style.display = 'none';
   document.body.style.overflow = '';
+}
+
+// ============================================================
+//  ORDER TRACKING
+// ============================================================
+function openTrackOrder() {
+  document.getElementById('trackResult').innerHTML = '';
+  document.getElementById('trackModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeTrackOrder() {
+  document.getElementById('trackModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function checkOrderStatus() {
+  const orderNo = document.getElementById('trackOrderNo').value.trim();
+  const phone = document.getElementById('trackPhone').value.trim();
+  const resultEl = document.getElementById('trackResult');
+
+  if (!orderNo || !phone) {
+    resultEl.innerHTML = '<p style="color:var(--red);font-size:13px;margin-top:8px">กรุณากรอกเลขที่ออเดอร์และเบอร์โทรศัพท์</p>';
+    return;
+  }
+  resultEl.innerHTML = '<p style="font-size:13px;color:var(--gray-text);margin-top:8px">กำลังตรวจสอบ...</p>';
+
+  try {
+    const params = new URLSearchParams({ slug: STORE_SLUG, orderNo, phone });
+    const res = await fetch(`${API_BASE}/api/public/orders/lookup?${params.toString()}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'ไม่พบออเดอร์');
+
+    const statusColor = data.status === 'CANCELLED' ? 'var(--red)' : data.status === 'CONFIRMED' ? 'var(--green)' : '#FB8C00';
+    resultEl.innerHTML = `
+      <div class="order-summary" style="margin-top:16px">
+        <h4>สถานะ: <span style="color:${statusColor}">${esc(data.statusLabel)}</span></h4>
+        ${data.items.map(i => `
+          <div class="order-line">
+            <span>${esc(i.productName)} × ${i.quantity}</span>
+            <span>฿${i.amount.toLocaleString('th-TH')}</span>
+          </div>`).join('')}
+        <div class="order-line total">
+          <span>ยอดรวม</span>
+          <span>฿${data.totalAmount.toLocaleString('th-TH')}</span>
+        </div>
+      </div>`;
+  } catch (e) {
+    resultEl.innerHTML = `<p style="color:var(--red);font-size:13px;margin-top:8px">${esc(e.message)}</p>`;
+  }
 }
 
 // ============================================================
@@ -1289,7 +1424,7 @@ document.getElementById('searchInput').addEventListener('keydown', e => {
 // Escape key close modals
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
-    closeProduct(); closeCart(); closeCheckout(); closeSuccess();
+    closeProduct(); closeCart(); closeCheckout(); closeSuccess(); closeTrackOrder();
   }
 });
 
