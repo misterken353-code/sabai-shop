@@ -772,8 +772,7 @@ async function loadProducts() {
     updateStoreUI();
 
     // Filter: เฉพาะสินค้าที่มีรูป
-    const hasImg = p => (p.image1Url && p.image1Url.startsWith('http')) ||
-                        (p.image2Url && p.image2Url.startsWith('http'));
+    const hasImg = p => [p.image1Url, p.image2Url, p.image3Url, p.image4Url].some(u => u && u.startsWith('http'));
 
     allProducts = (data.products || []).filter(hasImg);
     preOrderProducts = (data.preOrderProducts || []).filter(hasImg);
@@ -840,7 +839,7 @@ function getSource() {
   return activeTab === 'instock' ? allProducts : preOrderProducts;
 }
 
-function applyFilters() {
+function getFilteredList() {
   let src = [...getSource()];
   const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
   const minP = parseFloat(document.getElementById('priceMin')?.value) || 0;
@@ -868,8 +867,12 @@ function applyFilters() {
   else if (activeSort === 'name') src.sort((a,b) => a.name.localeCompare(b.name, 'th'));
   else if (activeSort === 'stock-desc') src.sort((a,b) => b.availableQty - a.availableQty);
 
+  return src;
+}
+
+function applyFilters() {
   currentPage = 1;
-  renderProducts(src);
+  renderProducts(getFilteredList());
 }
 
 function filterCat(cat) {
@@ -947,12 +950,12 @@ function renderProducts(list) {
 
 function goPage(p) {
   currentPage = p;
-  applyFilters();
+  renderProducts(getFilteredList());
   document.getElementById('productSection').scrollIntoView({behavior:'smooth'});
 }
 
 function productCardHTML(p) {
-  const img = validImg(p.image1Url) || validImg(p.image2Url);
+  const img = validImg(p.image1Url) || validImg(p.image2Url) || validImg(p.image3Url) || validImg(p.image4Url);
   const isPreOrder = activeTab === 'preorder';
   const isCritical = p.availableQty <= 3 && !isPreOrder;
   const badge = isPreOrder
@@ -1009,7 +1012,7 @@ function openProduct(id) {
   modalImgIndex = 0;
 
   // รวมรูปทุกรูปที่มี
-  modalImages = [p.image1Url, p.image2Url].filter(u => validImg(u));
+  modalImages = [p.image1Url, p.image2Url, p.image3Url, p.image4Url].filter(u => validImg(u));
 
   const isPreOrder = preOrderProducts.some(x => x.id === id);
   const stockColor = isPreOrder ? '#E65100' : p.availableQty > 10 ? 'var(--green)' : '#FB8C00';
@@ -1193,7 +1196,7 @@ function renderCart() {
   }
   const total = cart.reduce((s,i) => s + i.salePrice*i.qty, 0);
   body.innerHTML = cart.map((item,idx) => {
-    const img = validImg(item.image1Url) || validImg(item.image2Url);
+    const img = validImg(item.image1Url) || validImg(item.image2Url) || validImg(item.image3Url) || validImg(item.image4Url);
     return `
     <div class="cart-item">
       ${img
