@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+๏ปฟ<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8"/>
 <script>if(location.protocol!=='https:'&&location.hostname!=='localhost')location.replace('https://'+location.host+location.pathname+location.search);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Geargao online store by Sabai Panich. Quality products, delivery across Thailand."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://geargao.com/"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Geargao","legalName":"Sabai Panich","url":"https://geargao.com","logo":"https://geargao.com/geargao-logo.svg","telephone":"080-7673617","sameAs":["https://lin.ee/OjaUyKHe"],"address":"63 Moo 3, Rung Rawee, Nam Kliang, Si Sa Ket 33130, Thailand"}</script><title>Geargao | ร้านค้าออนไลน์</title>
+<title>Geargao โ€” เธฃเนเธฒเธเธเนเธฒเธญเธญเธเนเธฅเธเน</title>
 <link rel='stylesheet' href='assets/storefront.css'/>
 </head>
 <body>
@@ -12,11 +12,11 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <span>?? ส่งทั่วไทย | รับสินค้าที่หน้าร้าน หรือ จัดส่งพัสดุ</span>
+    <span>๐“ เธชเนเธเธ—เธฑเนเธงเนเธ—เธข | เธฃเธฑเธเธชเธดเธเธเนเธฒเธ—เธตเนเธซเธเนเธฒเธฃเนเธฒเธ เธซเธฃเธทเธญ เธเธฑเธ”เธชเนเธเธเธฑเธชเธ”เธธ</span>
     <div style="display:flex;gap:16px">
-      <a href="#" onclick="event.preventDefault();openTrackOrder()">ติดตามออเดอร์</a>
-      <a href="/faq/">ช่วยเหลือ</a>
-      <a href="/about/">เกี่ยวกับเรา</a>
+      <a href="#" onclick="event.preventDefault();openTrackOrder()">เธ•เธดเธ”เธ•เธฒเธกเธญเธญเน€เธ”เธญเธฃเน</a>
+      <a href="#">เธเนเธงเธขเน€เธซเธฅเธทเธญ</a>
+      <a href="#">เน€เธเธตเนเธขเธงเธเธฑเธเน€เธฃเธฒ</a>
     </div>
   </div>
 </div>
@@ -29,27 +29,27 @@
       <img class="logo-img" src="geargao-header-logo.svg" alt="Geargao" onerror="this.style.display='none'"/>
       <div class="logo-text">
         <h1>Geargao</h1>
-        <p>GEARGAO.COM ? OFFICIAL STORE</p>
+        <p>GEARGAO.COM ยท OFFICIAL STORE</p>
       </div>
     </div>
     <!-- Search -->
     <div class="search-wrap">
-      <input type="text" id="headerSearch" placeholder="ค้นหาสินค้า รหัส หรือ หมวดหมู่..."/>
+      <input type="text" id="headerSearch" placeholder="เธเนเธเธซเธฒเธชเธดเธเธเนเธฒ เธฃเธซเธฑเธช เธซเธฃเธทเธญ เธซเธกเธงเธ”เธซเธกเธนเน..."/>
       <button class="search-btn" onclick="doHeaderSearch()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        ค้นหา
+        เธเนเธเธซเธฒ
       </button>
     </div>
     <!-- Icons -->
     <div class="header-icons">
       <button class="icon-btn" onclick="openCart()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        <span>ตะกร้า</span>
+        <span>เธ•เธฐเธเธฃเนเธฒ</span>
         <div class="cart-badge" id="cartBadge">0</div>
       </button>
       <button class="icon-btn" onclick="openCheckout()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        <span>สั่งซื้อ</span>
+        <span>เธชเธฑเนเธเธเธทเนเธญ</span>
       </button>
     </div>
   </div>
@@ -58,15 +58,15 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-item all-cat" onclick="filterCat('ทั้งหมด')">
+    <div class="nav-item all-cat" onclick="filterCat('เธ—เธฑเนเธเธซเธกเธ”')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      หมวดหมู่ทั้งหมด
+      เธซเธกเธงเธ”เธซเธกเธนเนเธ—เธฑเนเธเธซเธกเธ”
     </div>
-    <div class="nav-item" id="nav-instock" onclick="setTab('instock')">? สินค้าพร้อมส่ง</div>
-    <div class="nav-item" id="nav-preorder" onclick="setTab('preorder')">?? Pre-order</div>
-    <div class="nav-item" onclick="sortProducts('price-asc')">?? ราคาต่ำ-สูง</div>
-    <div class="nav-item" onclick="sortProducts('price-desc')">?? ราคาสูง-ต่ำ</div>
-    <div class="nav-item" onclick="sortProducts('name')">?? เรียงชื่อ</div>
+    <div class="nav-item" id="nav-instock" onclick="setTab('instock')">โ… เธชเธดเธเธเนเธฒเธเธฃเนเธญเธกเธชเนเธ</div>
+    <div class="nav-item" id="nav-preorder" onclick="setTab('preorder')">๐• Pre-order</div>
+    <div class="nav-item" onclick="sortProducts('price-asc')">๐’ฐ เธฃเธฒเธเธฒเธ•เนเธณ-เธชเธนเธ</div>
+    <div class="nav-item" onclick="sortProducts('price-desc')">๐’ เธฃเธฒเธเธฒเธชเธนเธ-เธ•เนเธณ</div>
+    <div class="nav-item" onclick="sortProducts('name')">๐”ค เน€เธฃเธตเธขเธเธเธทเนเธญ</div>
   </div>
 </nav>
 
@@ -74,26 +74,26 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <h2>Geargao<br/><span>ครบ จบ ที่เดียว</span></h2>
-      <p>สินค้าคุณภาพ ราคาดี ส่งเร็ว ทั่วไทย<br/>เลือกสินค้าที่ต้องการ สั่งง่าย รับของไว</p>
+      <h2>Geargao<br/><span>เธเธฃเธ เธเธ เธ—เธตเนเน€เธ”เธตเธขเธง</span></h2>
+      <p>เธชเธดเธเธเนเธฒเธเธธเธ“เธ เธฒเธ เธฃเธฒเธเธฒเธ”เธต เธชเนเธเน€เธฃเนเธง เธ—เธฑเนเธงเนเธ—เธข<br/>เน€เธฅเธทเธญเธเธชเธดเธเธเนเธฒเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ เธชเธฑเนเธเธเนเธฒเธข เธฃเธฑเธเธเธญเธเนเธง</p>
       <div class="hero-cta">
         <button class="btn-primary" onclick="document.getElementById('productSection').scrollIntoView({behavior:'smooth'})">
-          ??? ดูสินค้าทั้งหมด
+          ๐๏ธ เธ”เธนเธชเธดเธเธเนเธฒเธ—เธฑเนเธเธซเธกเธ”
         </button>
-        <button class="btn-outline" onclick="setTab('instock')">?? สินค้าพร้อมส่ง</button>
+        <button class="btn-outline" onclick="setTab('instock')">๐“ฆ เธชเธดเธเธเนเธฒเธเธฃเนเธญเธกเธชเนเธ</button>
       </div>
       <div class="hero-stats" id="heroStats">
-        <div class="hero-stat"><div class="num" id="statTotal">—</div><div class="lbl">สินค้าทั้งหมด</div></div>
-        <div class="hero-stat"><div class="num" id="statInstock">—</div><div class="lbl">พร้อมส่ง</div></div>
-        <div class="hero-stat"><div class="num" id="statPreorder">—</div><div class="lbl">Pre-order</div></div>
+        <div class="hero-stat"><div class="num" id="statTotal">โ€”</div><div class="lbl">เธชเธดเธเธเนเธฒเธ—เธฑเนเธเธซเธกเธ”</div></div>
+        <div class="hero-stat"><div class="num" id="statInstock">โ€”</div><div class="lbl">เธเธฃเนเธญเธกเธชเนเธ</div></div>
+        <div class="hero-stat"><div class="num" id="statPreorder">โ€”</div><div class="lbl">Pre-order</div></div>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-icon-grid">
-        <div class="hero-icon-card"><div class="ic">??</div><p>ส่งด่วนทั่วไทย</p></div>
-        <div class="hero-icon-card"><div class="ic">??</div><p>สินค้าคุณภาพ</p></div>
-        <div class="hero-icon-card"><div class="ic">??</div><p>ราคาดีที่สุด</p></div>
-        <div class="hero-icon-card"><div class="ic">??</div><p>ชำระปลอดภัย</p></div>
+        <div class="hero-icon-card"><div class="ic">๐</div><p>เธชเนเธเธ”เนเธงเธเธ—เธฑเนเธงเนเธ—เธข</p></div>
+        <div class="hero-icon-card"><div class="ic">๐</div><p>เธชเธดเธเธเนเธฒเธเธธเธ“เธ เธฒเธ</p></div>
+        <div class="hero-icon-card"><div class="ic">๐’ฐ</div><p>เธฃเธฒเธเธฒเธ”เธตเธ—เธตเนเธชเธธเธ”</p></div>
+        <div class="hero-icon-card"><div class="ic">๐”’</div><p>เธเธณเธฃเธฐเธเธฅเธญเธ”เธ เธฑเธข</p></div>
       </div>
     </div>
   </div>
@@ -102,11 +102,11 @@
 <!-- FEATURES STRIP -->
 <div class="features">
   <div class="features-inner">
-    <div class="feat"><span class="feat-icon">??</span><div class="feat-text"><strong>จัดส่งรวดเร็ว</strong><span>ส่งทั่วไทยภายใน 1-3 วัน</span></div></div>
-    <div class="feat"><span class="feat-icon">?</span><div class="feat-text"><strong>สินค้าแท้ 100%</strong><span>คัดสรรสินค้าคุณภาพ</span></div></div>
-    <div class="feat"><span class="feat-icon">??</span><div class="feat-text"><strong>หลายช่องทางชำระ</strong><span>โอน / เงินสด / QR Code</span></div></div>
-    <div class="feat"><span class="feat-icon">??</span><div class="feat-text"><strong>บริการหลังการขาย</strong><span>ติดต่อเราได้ตลอด</span></div></div>
-    <div class="feat"><span class="feat-icon">??</span><div class="feat-text"><strong>คืนสินค้าได้</strong><span>ภายใน 7 วัน</span></div></div>
+    <div class="feat"><span class="feat-icon">๐</span><div class="feat-text"><strong>เธเธฑเธ”เธชเนเธเธฃเธงเธ”เน€เธฃเนเธง</strong><span>เธชเนเธเธ—เธฑเนเธงเนเธ—เธขเธ เธฒเธขเนเธ 1-3 เธงเธฑเธ</span></div></div>
+    <div class="feat"><span class="feat-icon">โ…</span><div class="feat-text"><strong>เธชเธดเธเธเนเธฒเนเธ—เน 100%</strong><span>เธเธฑเธ”เธชเธฃเธฃเธชเธดเธเธเนเธฒเธเธธเธ“เธ เธฒเธ</span></div></div>
+    <div class="feat"><span class="feat-icon">๐’ณ</span><div class="feat-text"><strong>เธซเธฅเธฒเธขเธเนเธญเธเธ—เธฒเธเธเธณเธฃเธฐ</strong><span>เนเธญเธ / เน€เธเธดเธเธชเธ” / QR Code</span></div></div>
+    <div class="feat"><span class="feat-icon">๐“</span><div class="feat-text"><strong>เธเธฃเธดเธเธฒเธฃเธซเธฅเธฑเธเธเธฒเธฃเธเธฒเธข</strong><span>เธ•เธดเธ”เธ•เนเธญเน€เธฃเธฒเนเธ”เนเธ•เธฅเธญเธ”</span></div></div>
+    <div class="feat"><span class="feat-icon">๐”</span><div class="feat-text"><strong>เธเธทเธเธชเธดเธเธเนเธฒเนเธ”เน</strong><span>เธ เธฒเธขเนเธ 7 เธงเธฑเธ</span></div></div>
   </div>
 </div>
 
@@ -115,26 +115,26 @@
   <div class="filter-inner">
     <!-- Tab -->
     <div class="tab-bar">
-      <button class="tab-btn active" id="tab-instock" onclick="setTab('instock')">?? พร้อมส่ง</button>
-      <button class="tab-btn" id="tab-preorder" onclick="setTab('preorder')">?? Pre-order</button>
+      <button class="tab-btn active" id="tab-instock" onclick="setTab('instock')">๐ข เธเธฃเนเธญเธกเธชเนเธ</button>
+      <button class="tab-btn" id="tab-preorder" onclick="setTab('preorder')">๐• Pre-order</button>
     </div>
     <!-- Search -->
-    <input class="filter-input" type="text" id="searchInput" placeholder="?? ค้นหา..." oninput="applyFilters()"/>
+    <input class="filter-input" type="text" id="searchInput" placeholder="๐” เธเนเธเธซเธฒ..." oninput="applyFilters()"/>
     <!-- Sort -->
     <select class="sort-select" onchange="sortProducts(this.value)">
-      <option value="default">เรียงโดย: ค่าเริ่มต้น</option>
-      <option value="price-asc">ราคา: ต่ำ  สูง</option>
-      <option value="price-desc">ราคา: สูง  ต่ำ</option>
-      <option value="name">ชื่อ AZ</option>
-      <option value="stock-desc">จำนวน: มากน้อย</option>
+      <option value="default">เน€เธฃเธตเธขเธเนเธ”เธข: เธเนเธฒเน€เธฃเธดเนเธกเธ•เนเธ</option>
+      <option value="price-asc">เธฃเธฒเธเธฒ: เธ•เนเธณ โ’ เธชเธนเธ</option>
+      <option value="price-desc">เธฃเธฒเธเธฒ: เธชเธนเธ โ’ เธ•เนเธณ</option>
+      <option value="name">เธเธทเนเธญ Aโ’Z</option>
+      <option value="stock-desc">เธเธณเธเธงเธ: เธกเธฒเธโ’เธเนเธญเธข</option>
     </select>
-    <span class="result-count" id="resultCount">กำลังโหลด...</span>
+    <span class="result-count" id="resultCount">เธเธณเธฅเธฑเธเนเธซเธฅเธ”...</span>
   </div>
   <!-- Category chips -->
   <div class="filter-inner" style="padding-top:0;border-top:1px solid var(--gray-border)">
-    <span style="font-size:12px;color:var(--gray-text);font-weight:600;white-space:nowrap">หมวดหมู่:</span>
+    <span style="font-size:12px;color:var(--gray-text);font-weight:600;white-space:nowrap">เธซเธกเธงเธ”เธซเธกเธนเน:</span>
     <div class="cat-chips" id="catChips">
-      <button class="cat-chip active" onclick="filterCat('ทั้งหมด')">ทั้งหมด</button>
+      <button class="cat-chip active" onclick="filterCat('เธ—เธฑเนเธเธซเธกเธ”')">เธ—เธฑเนเธเธซเธกเธ”</button>
     </div>
   </div>
 </div>
@@ -146,42 +146,42 @@
     <div class="sidebar-box">
       <div class="sidebar-title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
-        หมวดหมู่สินค้า
+        เธซเธกเธงเธ”เธซเธกเธนเนเธชเธดเธเธเนเธฒ
       </div>
       <div class="sidebar-list" id="sidebarCats">
-        <div class="sidebar-item active" onclick="filterCat('ทั้งหมด')">
-          <span>ทั้งหมด</span><span class="count" id="cat-all">0</span>
+        <div class="sidebar-item active" onclick="filterCat('เธ—เธฑเนเธเธซเธกเธ”')">
+          <span>เธ—เธฑเนเธเธซเธกเธ”</span><span class="count" id="cat-all">0</span>
         </div>
       </div>
     </div>
     <div class="sidebar-box">
       <div class="sidebar-title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        กรองราคา
+        เธเธฃเธญเธเธฃเธฒเธเธฒ
       </div>
       <div class="price-filter">
-        <label>ช่วงราคา (บาท)</label>
+        <label>เธเนเธงเธเธฃเธฒเธเธฒ (เธเธฒเธ—)</label>
         <div class="price-range">
-          <input type="number" id="priceMin" placeholder="ต่ำสุด" oninput="applyFilters()"/>
-          <span>—</span>
-          <input type="number" id="priceMax" placeholder="สูงสุด" oninput="applyFilters()"/>
+          <input type="number" id="priceMin" placeholder="เธ•เนเธณเธชเธธเธ”" oninput="applyFilters()"/>
+          <span>โ€”</span>
+          <input type="number" id="priceMax" placeholder="เธชเธนเธเธชเธธเธ”" oninput="applyFilters()"/>
         </div>
       </div>
     </div>
     <div class="sidebar-box">
-      <div class="sidebar-title">?? สถานะสต็อก</div>
+      <div class="sidebar-title">๐“ฆ เธชเธ–เธฒเธเธฐเธชเธ•เนเธญเธ</div>
       <div class="sidebar-list">
-        <div class="sidebar-item" onclick="filterStock('all')" id="stock-all" style="font-weight:700">สินค้าทั้งหมด</div>
-        <div class="sidebar-item" onclick="filterStock('high')">?? สต็อกมาก (&gt;10)</div>
-        <div class="sidebar-item" onclick="filterStock('low')">?? สต็อกน้อย (1-10)</div>
+        <div class="sidebar-item" onclick="filterStock('all')" id="stock-all" style="font-weight:700">เธชเธดเธเธเนเธฒเธ—เธฑเนเธเธซเธกเธ”</div>
+        <div class="sidebar-item" onclick="filterStock('high')">๐ข เธชเธ•เนเธญเธเธกเธฒเธ (&gt;10)</div>
+        <div class="sidebar-item" onclick="filterStock('low')">๐ก เธชเธ•เนเธญเธเธเนเธญเธข (1-10)</div>
       </div>
     </div>
     <div class="sidebar-box" style="background:var(--blue-dark);border:none">
       <div style="padding:20px;text-align:center">
-        <div style="font-size:32px;margin-bottom:8px">??</div>
-        <p style="color:white;font-size:13px;font-weight:800;margin-bottom:4px">ต้องการความช่วยเหลือ?</p>
-        <p style="color:#90CAF9;font-size:12px;margin-bottom:12px">ติดต่อเราได้เลย</p>
-        <div id="storePhone" style="background:var(--gold);color:var(--blue-dark);padding:8px 16px;border-radius:50px;font-size:13px;font-weight:800;display:inline-block">กำลังโหลด...</div>
+        <div style="font-size:32px;margin-bottom:8px">๐“</div>
+        <p style="color:white;font-size:13px;font-weight:800;margin-bottom:4px">เธ•เนเธญเธเธเธฒเธฃเธเธงเธฒเธกเธเนเธงเธขเน€เธซเธฅเธทเธญ?</p>
+        <p style="color:#90CAF9;font-size:12px;margin-bottom:12px">เธ•เธดเธ”เธ•เนเธญเน€เธฃเธฒเนเธ”เนเน€เธฅเธข</p>
+        <div id="storePhone" style="background:var(--gold);color:var(--blue-dark);padding:8px 16px;border-radius:50px;font-size:13px;font-weight:800;display:inline-block">เธเธณเธฅเธฑเธเนเธซเธฅเธ”...</div>
       </div>
     </div>
   </div>
@@ -191,7 +191,7 @@
     <div class="product-grid" id="productGrid">
       <div class="loading">
         <div class="spinner"></div>
-        <p style="color:var(--gray-text);font-weight:600">กำลังโหลดสินค้าจาก Geargao...</p>
+        <p style="color:var(--gray-text);font-weight:600">เธเธณเธฅเธฑเธเนเธซเธฅเธ”เธชเธดเธเธเนเธฒเธเธฒเธ Geargao...</p>
       </div>
     </div>
     <!-- Pagination placeholder -->
@@ -203,67 +203,67 @@
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">?? Geargao</div>
-      <div class="footer-desc" id="storeAddress">ร้านค้าออนไลน์คุณภาพ สินค้าพร้อมส่ง บริการดี ราคาเป็นมิตร</div>
+      <div class="footer-brand">๐’ Geargao</div>
+      <div class="footer-desc" id="storeAddress">เธฃเนเธฒเธเธเนเธฒเธญเธญเธเนเธฅเธเนเธเธธเธ“เธ เธฒเธ เธชเธดเธเธเนเธฒเธเธฃเนเธญเธกเธชเนเธ เธเธฃเธดเธเธฒเธฃเธ”เธต เธฃเธฒเธเธฒเน€เธเนเธเธกเธดเธ•เธฃ</div>
     </div>
     <div class="footer-col">
-      <h4>ลิงก์ด่วน</h4>
+      <h4>เธฅเธดเธเธเนเธ”เนเธงเธ</h4>
       <ul>
-        <li><a href="#" onclick="setTab('instock')">สินค้าพร้อมส่ง</a></li>
+        <li><a href="#" onclick="setTab('instock')">เธชเธดเธเธเนเธฒเธเธฃเนเธญเธกเธชเนเธ</a></li>
         <li><a href="#" onclick="setTab('preorder')">Pre-order</a></li>
-        <li><a href="#" onclick="openCart()">ตะกร้าสินค้า</a></li>
-        <li><a href="#" onclick="openCheckout()">สั่งซื้อสินค้า</a></li>
+        <li><a href="#" onclick="openCart()">เธ•เธฐเธเธฃเนเธฒเธชเธดเธเธเนเธฒ</a></li>
+        <li><a href="#" onclick="openCheckout()">เธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>บริการลูกค้า</h4>
+      <h4>เธเธฃเธดเธเธฒเธฃเธฅเธนเธเธเนเธฒ</h4>
       <ul>
-        <li><a href="#" onclick="event.preventDefault();openTrackOrder()">ติดตามออเดอร์</a></li>
-        <li><a href="/returns/">นโยบายคืนสินค้า</a></li>
-        <li><a href="/payment/">วิธีการชำระเงิน</a></li>
-        <li><a href="/faq/">ช่วยเหลือ / FAQ</a></li>
+        <li><a href="#" onclick="event.preventDefault();openTrackOrder()">เธ•เธดเธ”เธ•เธฒเธกเธญเธญเน€เธ”เธญเธฃเน</a></li>
+        <li><a href="#">เธเนเธขเธเธฒเธขเธเธทเธเธชเธดเธเธเนเธฒ</a></li>
+        <li><a href="#">เธงเธดเธเธตเธเธฒเธฃเธเธณเธฃเธฐเน€เธเธดเธ</a></li>
+        <li><a href="#">เธเนเธงเธขเน€เธซเธฅเธทเธญ / FAQ</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>ติดต่อเรา</h4>
+      <h4>เธ•เธดเธ”เธ•เนเธญเน€เธฃเธฒ</h4>
       <ul>
-        <li><a href="#" id="footerPhone">?? —</a></li>
-        <li><a href="#">?? อีเมล</a></li>
-        <li><a href="#">?? LINE OA</a></li>
-        <li><a href="#">?? Facebook</a></li>
+        <li><a href="#" id="footerPhone">๐“ โ€”</a></li>
+        <li><a href="#">๐“ง เธญเธตเน€เธกเธฅ</a></li>
+        <li><a href="#">๐’ฌ LINE OA</a></li>
+        <li><a href="#">๐“ Facebook</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    ? 2024 Geargao ? สงวนลิขสิทธิ์ ? Powered by Geargao Commerce System
+    ยฉ 2024 Geargao ยท เธชเธเธงเธเธฅเธดเธเธชเธดเธ—เธเธดเน ยท Powered by Geargao Commerce System
   </div>
 </footer>
 
 <!-- BACK TO TOP -->
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"></button>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">โ–ฒ</button>
 
 <!-- CART PANEL -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-panel" id="cartPanel">
   <div class="cart-header">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
-    <h3>ตะกร้าสินค้า</h3>
-    <button class="cart-close" onclick="closeCart()">?</button>
+    <h3>เธ•เธฐเธเธฃเนเธฒเธชเธดเธเธเนเธฒ</h3>
+    <button class="cart-close" onclick="closeCart()">โ•</button>
   </div>
   <div class="cart-body" id="cartBody">
     <div class="cart-empty">
-      <div class="ic">??</div>
-      <p>ตะกร้าว่างเปล่า<br/><small>เพิ่มสินค้าที่ต้องการ</small></p>
+      <div class="ic">๐’</div>
+      <p>เธ•เธฐเธเธฃเนเธฒเธงเนเธฒเธเน€เธเธฅเนเธฒ<br/><small>เน€เธเธดเนเธกเธชเธดเธเธเนเธฒเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</small></p>
     </div>
   </div>
   <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-total-row"><span>ราคารวม</span><span id="cartSubtotal">฿0</span></div>
-    <div class="cart-total-row"><span>ค่าจัดส่ง</span><span>คำนวณตอนชำระ</span></div>
-    <div class="cart-total-row main"><span>ยอดรวม</span><span id="cartTotal">฿0</span></div>
+    <div class="cart-total-row"><span>เธฃเธฒเธเธฒเธฃเธงเธก</span><span id="cartSubtotal">เธฟ0</span></div>
+    <div class="cart-total-row"><span>เธเนเธฒเธเธฑเธ”เธชเนเธ</span><span>เธเธณเธเธงเธ“เธ•เธญเธเธเธณเธฃเธฐ</span></div>
+    <div class="cart-total-row main"><span>เธขเธญเธ”เธฃเธงเธก</span><span id="cartTotal">เธฟ0</span></div>
     <button class="btn-checkout" onclick="closeCart();openCheckout()">
-      ??? ดำเนินการสั่งซื้อ (ชำระเงิน)
+      ๐๏ธ เธ”เธณเน€เธเธดเธเธเธฒเธฃเธชเธฑเนเธเธเธทเนเธญ (เธเธณเธฃเธฐเน€เธเธดเธ)
     </button>
-    <button class="btn-continue" onclick="closeCart()"> ช้อปต่อ</button>
+    <button class="btn-continue" onclick="closeCart()">โ เธเนเธญเธเธ•เนเธญ</button>
   </div>
 </div>
 
@@ -281,64 +281,64 @@
 <div class="checkout-modal" id="checkoutModal">
   <div class="checkout-box">
     <div class="checkout-header">
-      <span style="font-size:20px">???</span>
-      <h3>สั่งซื้อสินค้า</h3>
-      <button style="background:none;color:white;border:none;font-size:22px;cursor:pointer" onclick="closeCheckout()">?</button>
+      <span style="font-size:20px">๐๏ธ</span>
+      <h3>เธชเธฑเนเธเธเธทเนเธญเธชเธดเธเธเนเธฒ</h3>
+      <button style="background:none;color:white;border:none;font-size:22px;cursor:pointer" onclick="closeCheckout()">โ•</button>
     </div>
     <div class="checkout-body">
-      <div class="checkout-step"><span>1</span> ข้อมูลผู้สั่ง &amp; ที่อยู่จัดส่ง</div>
+      <div class="checkout-step"><span>1</span> เธเนเธญเธกเธนเธฅเธเธนเนเธชเธฑเนเธ &amp; เธ—เธตเนเธญเธขเธนเนเธเธฑเธ”เธชเนเธ</div>
       <div class="form-row">
         <div class="form-group">
-          <label>ชื่อ-นามสกุล *</label>
-          <input type="text" id="custName" placeholder="ชื่อ-นามสกุล"/>
+          <label>เธเธทเนเธญ-เธเธฒเธกเธชเธเธธเธฅ *</label>
+          <input type="text" id="custName" placeholder="เธเธทเนเธญ-เธเธฒเธกเธชเธเธธเธฅ"/>
         </div>
         <div class="form-group">
-          <label>เบอร์โทรศัพท์ *</label>
+          <label>เน€เธเธญเธฃเนเนเธ—เธฃเธจเธฑเธเธ—เน *</label>
           <input type="tel" id="custPhone" placeholder="0812345678"/>
         </div>
       </div>
       <div class="form-group">
-        <label>อีเมล (ไม่บังคับ)</label>
+        <label>เธญเธตเน€เธกเธฅ (เนเธกเนเธเธฑเธเธเธฑเธ)</label>
         <input type="email" id="custEmail" placeholder="email@example.com"/>
       </div>
       <div class="form-group">
-        <label>ที่อยู่จัดส่ง *</label>
-        <textarea id="custAddress" rows="3" placeholder="บ้านเลขที่ ซอย ถนน ตำบล อำเภอ จังหวัด รหัสไปรษณีย์"></textarea>
+        <label>เธ—เธตเนเธญเธขเธนเนเธเธฑเธ”เธชเนเธ *</label>
+        <textarea id="custAddress" rows="3" placeholder="เธเนเธฒเธเน€เธฅเธเธ—เธตเน เธเธญเธข เธ–เธเธ เธ•เธณเธเธฅ เธญเธณเน€เธ เธญ เธเธฑเธเธซเธงเธฑเธ” เธฃเธซเธฑเธชเนเธเธฃเธฉเธ“เธตเธขเน"></textarea>
       </div>
       <div class="form-group">
-        <label>หมายเหตุ / ข้อความถึงร้านค้า</label>
-        <textarea id="custNote" rows="2" placeholder="หมายเหตุเพิ่มเติม (ไม่บังคับ)"></textarea>
+        <label>เธซเธกเธฒเธขเน€เธซเธ•เธธ / เธเนเธญเธเธงเธฒเธกเธ–เธถเธเธฃเนเธฒเธเธเนเธฒ</label>
+        <textarea id="custNote" rows="2" placeholder="เธซเธกเธฒเธขเน€เธซเธ•เธธเน€เธเธดเนเธกเน€เธ•เธดเธก (เนเธกเนเธเธฑเธเธเธฑเธ)"></textarea>
       </div>
 
       <input type="text" id="custWebsite" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
 
-      <div class="checkout-step" style="margin-top:20px"><span>2</span> สรุปรายการสินค้า</div>
+      <div class="checkout-step" style="margin-top:20px"><span>2</span> เธชเธฃเธธเธเธฃเธฒเธขเธเธฒเธฃเธชเธดเธเธเนเธฒ</div>
       <div class="order-summary" id="checkoutSummary"></div>
 
-      <div class="checkout-step" style="margin-top:20px"><span>3</span> วิธีการชำระเงิน</div>
+      <div class="checkout-step" style="margin-top:20px"><span>3</span> เธงเธดเธเธตเธเธฒเธฃเธเธณเธฃเธฐเน€เธเธดเธ</div>
       <div class="payment-methods">
         <div class="pay-method selected" onclick="selectPayment(this,'transfer')">
-          <div class="pm-icon">??</div>
-          <div class="pm-name">โอนผ่านธนาคาร</div>
+          <div class="pm-icon">๐ฆ</div>
+          <div class="pm-name">เนเธญเธเธเนเธฒเธเธเธเธฒเธเธฒเธฃ</div>
         </div>
         <div class="pay-method" onclick="selectPayment(this,'qr')">
-          <div class="pm-icon">??</div>
-          <div class="pm-name">QR Code พร้อมเพย์</div>
+          <div class="pm-icon">๐“ฑ</div>
+          <div class="pm-name">QR Code เธเธฃเนเธญเธกเน€เธเธขเน</div>
         </div>
         <div class="pay-method" onclick="selectPayment(this,'cash')">
-          <div class="pm-icon">??</div>
-          <div class="pm-name">เงินสด (รับที่ร้าน)</div>
+          <div class="pm-icon">๐’ต</div>
+          <div class="pm-name">เน€เธเธดเธเธชเธ” (เธฃเธฑเธเธ—เธตเนเธฃเนเธฒเธ)</div>
         </div>
         <div class="pay-method" onclick="selectPayment(this,'cod')">
-          <div class="pm-icon">??</div>
-          <div class="pm-name">เก็บเงินปลายทาง</div>
+          <div class="pm-icon">๐“ฆ</div>
+          <div class="pm-name">เน€เธเนเธเน€เธเธดเธเธเธฅเธฒเธขเธ—เธฒเธ</div>
         </div>
       </div>
     </div>
     <div class="checkout-footer">
-      <button class="btn-back" onclick="closeCheckout();openCart()"> กลับ</button>
+      <button class="btn-back" onclick="closeCheckout();openCart()">โ เธเธฅเธฑเธ</button>
       <button class="btn-place-order" onclick="placeOrder()">
-        ? ยืนยันการสั่งซื้อ
+        โ… เธขเธทเธเธขเธฑเธเธเธฒเธฃเธชเธฑเนเธเธเธทเนเธญ
       </button>
     </div>
   </div>
@@ -347,18 +347,18 @@
 <!-- SUCCESS MODAL -->
 <div class="success-modal" id="successModal">
   <div class="success-box">
-    <div class="success-icon">??</div>
-    <h2>สั่งซื้อสำเร็จ!</h2>
-    <p>ขอบคุณที่ไว้วางใจ Geargao<br/>เราจะติดต่อยืนยันออเดอร์กลับไปเร็วๆ นี้</p>
-    <div class="order-number" id="orderNumber">—</div>
+    <div class="success-icon">๐</div>
+    <h2>เธชเธฑเนเธเธเธทเนเธญเธชเธณเน€เธฃเนเธ!</h2>
+    <p>เธเธญเธเธเธธเธ“เธ—เธตเนเนเธงเนเธงเธฒเธเนเธ Geargao<br/>เน€เธฃเธฒเธเธฐเธ•เธดเธ”เธ•เนเธญเธขเธทเธเธขเธฑเธเธญเธญเน€เธ”เธญเธฃเนเธเธฅเธฑเธเนเธเน€เธฃเนเธงเน เธเธตเน</p>
+    <div class="order-number" id="orderNumber">โ€”</div>
     <div id="qrSection" style="display:none;margin-bottom:16px">
-      <p style="font-size:13px;color:var(--gray-text);margin-bottom:8px">สแกนจ่ายผ่าน PromptPay</p>
+      <p style="font-size:13px;color:var(--gray-text);margin-bottom:8px">เธชเนเธเธเธเนเธฒเธขเธเนเธฒเธ PromptPay</p>
       <img id="qrImage" src="" alt="PromptPay QR" style="width:200px;height:200px;border:1px solid var(--gray-border);border-radius:10px"/>
       <p id="qrAmount" style="font-size:16px;font-weight:800;color:var(--red);margin-top:8px"></p>
     </div>
-    <p style="font-size:12px;color:#9E9E9E;margin-bottom:20px">กรุณาบันทึกเลขออเดอร์ไว้เพื่อติดตามสถานะ</p>
+    <p style="font-size:12px;color:#9E9E9E;margin-bottom:20px">เธเธฃเธธเธ“เธฒเธเธฑเธเธ—เธถเธเน€เธฅเธเธญเธญเน€เธ”เธญเธฃเนเนเธงเนเน€เธเธทเนเธญเธ•เธดเธ”เธ•เธฒเธกเธชเธ–เธฒเธเธฐ</p>
     <button class="btn-primary" onclick="closeSuccess()" style="width:100%;justify-content:center">
-      ??? ช้อปต่อ
+      ๐๏ธ เธเนเธญเธเธ•เนเธญ
     </button>
   </div>
 </div>
@@ -367,35 +367,31 @@
 <div class="checkout-modal" id="trackModal">
   <div class="checkout-box" style="max-width:480px">
     <div class="checkout-header">
-      <span style="font-size:20px">??</span>
-      <h3>ติดตามออเดอร์</h3>
-      <button style="background:none;color:white;border:none;font-size:22px;cursor:pointer" onclick="closeTrackOrder()">?</button>
+      <span style="font-size:20px">๐”</span>
+      <h3>เธ•เธดเธ”เธ•เธฒเธกเธญเธญเน€เธ”เธญเธฃเน</h3>
+      <button style="background:none;color:white;border:none;font-size:22px;cursor:pointer" onclick="closeTrackOrder()">โ•</button>
     </div>
     <div class="checkout-body">
       <div class="form-group">
-        <label>เลขที่ออเดอร์ *</label>
-        <input type="text" id="trackOrderNo" placeholder="เช่น WEB-202607-00001"/>
+        <label>เน€เธฅเธเธ—เธตเนเธญเธญเน€เธ”เธญเธฃเน *</label>
+        <input type="text" id="trackOrderNo" placeholder="เน€เธเนเธ WEB-202607-00001"/>
       </div>
       <div class="form-group">
-        <label>เบอร์โทรศัพท์ที่ใช้สั่งซื้อ *</label>
+        <label>เน€เธเธญเธฃเนเนเธ—เธฃเธจเธฑเธเธ—เนเธ—เธตเนเนเธเนเธชเธฑเนเธเธเธทเนเธญ *</label>
         <input type="tel" id="trackPhone" placeholder="0812345678"/>
       </div>
       <div id="trackResult"></div>
     </div>
     <div class="checkout-footer">
-      <button class="btn-back" onclick="closeTrackOrder()">ปิด</button>
-      <button class="btn-place-order" onclick="checkOrderStatus()">?? ตรวจสอบสถานะ</button>
+      <button class="btn-back" onclick="closeTrackOrder()">เธเธดเธ”</button>
+      <button class="btn-place-order" onclick="checkOrderStatus()">๐” เธ•เธฃเธงเธเธชเธญเธเธชเธ–เธฒเธเธฐ</button>
     </div>
   </div>
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast">? เพิ่มลงตะกร้าแล้ว</div>
+<div class="toast" id="toast">โ… เน€เธเธดเนเธกเธฅเธเธ•เธฐเธเธฃเนเธฒเนเธฅเนเธง</div>
 
 <script src='assets/storefront.js' defer></script>
 </body>
 </html>
-
-
-
-
