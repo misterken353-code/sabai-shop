@@ -253,12 +253,19 @@ function renderProducts(list) {
 
   grid.innerHTML = paged.map(p => productCardHTML(p)).join('');
 
-  // Pagination
+  // Pagination: show nearby pages plus Previous/Next, not every page.
   if (totalPages > 1) {
-    let pages = '';
-    for (let i=1;i<=totalPages;i++) {
-      pages += `<button onclick="goPage(${i})" style="width:36px;height:36px;border-radius:8px;border:1.5px solid ${i===page?'var(--blue)':'var(--gray-border)'};background:${i===page?'var(--blue)':'white'};color:${i===page?'white':'var(--gray-dark)'};font-weight:700;font-size:13px;cursor:pointer">${i}</button>`;
-    }
+    const visiblePages = new Set([1, totalPages]);
+    for (let i = Math.max(1, page - 2); i <= Math.min(totalPages, page + 2); i++) visiblePages.add(i);
+    const pageList = [...visiblePages].sort((a, b) => a - b);
+    const button = (label, target, disabled = false, active = false) =>
+      `<button onclick="goPage(${target})" ${disabled ? 'disabled' : ''} style="min-width:36px;height:36px;padding:0 10px;border-radius:8px;border:1.5px solid ${active?'var(--blue)':'var(--gray-border)'};background:${active?'var(--blue)':'white'};color:${active?'white':'var(--gray-dark)'};font-weight:700;font-size:13px;cursor:${disabled?'not-allowed':'pointer'};opacity:${disabled?'.45':'1'}">${label}</button>`;
+    let pages = button('Previous', Math.max(1, page - 1), page === 1);
+    pageList.forEach((item, index) => {
+      if (index && item - pageList[index - 1] > 1) pages += '<span style="padding:0 2px;color:var(--gray-text);font-weight:700">...</span>';
+      pages += button(item, item, false, item === page);
+    });
+    pages += button('Next', Math.min(totalPages, page + 1), page === totalPages);
     document.getElementById('pagination').innerHTML = pages;
   } else {
     document.getElementById('pagination').innerHTML = '';
