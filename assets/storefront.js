@@ -193,8 +193,41 @@ function filterStock(val) {
 function doHeaderSearch() {
   const q = document.getElementById('headerSearch').value;
   document.getElementById('searchInput').value = q;
+  closeHeaderSearchResults();
   document.getElementById('productSection').scrollIntoView({behavior:'smooth'});
   applyFilters();
+}
+
+
+function closeHeaderSearchResults() {
+  const results = document.getElementById('headerSearchResults');
+  results.classList.remove('open');
+  results.innerHTML = '';
+}
+
+function renderHeaderSearchResults() {
+  const input = document.getElementById('headerSearch');
+  const results = document.getElementById('headerSearchResults');
+  const query = input.value.trim().toLowerCase();
+  if (!query) { closeHeaderSearchResults(); return; }
+  const matches = [...allProducts, ...preOrderProducts].filter(p =>
+    p.name.toLowerCase().includes(query) || p.code.toLowerCase().includes(query) ||
+    (p.categoryName || '').toLowerCase().includes(query)
+  ).slice(0, 6);
+  if (!matches.length) {
+    results.innerHTML = '<div class="header-search-label">No matching products</div>';
+    results.classList.add('open');
+    return;
+  }
+  results.innerHTML = '<div class="header-search-label">Found ' + matches.length + (matches.length === 6 ? '+' : '') + ' products</div>' +
+    matches.map(p => {
+      const image = validImg(p.image1Url) || validImg(p.image2Url) || validImg(p.image3Url) || validImg(p.image4Url);
+      return '<button class="header-search-item" data-header-product-id="' + esc(p.id) + '" role="option">' +
+        (image ? '<img src="' + esc(image) + '" alt=""/>' : '<span class="header-search-thumb">&#128717;</span>') +
+        '<span><span class="header-search-name">' + esc(p.name) + '</span><span class="header-search-meta">' + esc(p.categoryName || p.code || 'Geargao') + '</span></span>' +
+        '<span class="header-search-price">&#3647;' + p.salePrice.toLocaleString('th-TH') + '</span></button>';
+    }).join('') + '<button class="header-search-all" data-header-show-all>View all results</button>';
+  results.classList.add('open');
 }
 
 // ============================================================
@@ -737,6 +770,21 @@ window.addEventListener('scroll', () => {
 // Search on Enter
 document.getElementById('headerSearch').addEventListener('keydown', e => {
   if (e.key === 'Enter') doHeaderSearch();
+});
+document.getElementById('headerSearch').addEventListener('input', renderHeaderSearchResults);
+document.getElementById('headerSearch').addEventListener('focus', renderHeaderSearchResults);
+document.getElementById('headerSearchResults').addEventListener('click', event => {
+  const productButton = event.target.closest('[data-header-product-id]');
+  if (productButton) {
+    const product = [...allProducts, ...preOrderProducts].find(p => p.id === productButton.dataset.headerProductId);
+    closeHeaderSearchResults();
+    if (product) openProduct(product.id);
+  } else if (event.target.closest('[data-header-show-all]')) {
+    doHeaderSearch();
+  }
+});
+document.addEventListener('click', event => {
+  if (!event.target.closest('.search-wrap')) closeHeaderSearchResults();
 });
 document.getElementById('searchInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') applyFilters();
