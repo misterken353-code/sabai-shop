@@ -1,0 +1,1 @@
+{"name":"geargao-storefront","private":true,"version":"1.0.0","scripts":{"build":"node scripts/build-seo.js","check":"node --check assets/storefront.js && node --check scripts/build-seo.js","test":"npm run check && npm run build"}}
