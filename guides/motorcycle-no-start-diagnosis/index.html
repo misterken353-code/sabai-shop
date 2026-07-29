@@ -40,14 +40,27 @@ const relatedEscape = value => String(value || '').replace(/&/g, '&amp;').replac
 const relatedHash = value => { let hash = 5381; for (const character of String(value)) hash = ((hash << 5) + hash) ^ character.charCodeAt(0); return (hash >>> 0).toString(36); };
 const relatedSlug = (value, fallback) => { const slug = String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); return slug ? slug.slice(0, 72) : fallback + '-' + relatedHash(value); };
 const relatedUrl = product => '/products/' + relatedSlug(product.code || product.name, 'product') + '-' + String(product.id).slice(-8) + '/';
-const relatedScore = product => { const haystack = [product.name, product.categoryName, product.description, product.code].join(' ').toLowerCase(); const keywords = /battery|spark|plug|fuse|electric|ignition|แบต|หัวเทียน|ฟิวส์|ไฟฟ้า|คอยล์/; return keywords.test(haystack) ? 1 : 0; };
+const RELATED_START_CATEGORIES = new Set(['Batteries & Charges', 'Lighting & Electrical']);
+const relatedScore = product => {
+  if (!RELATED_START_CATEGORIES.has(product.categoryName)) return 0;
+  const name = String(product.name || '').toLowerCase();
+  if (/แบตเตอรี่|battery/.test(name)) return 100;
+  if (/มอเตอร์สตาร์ท|ไดสตาร์ท|starter motor|starter/.test(name)) return 90;
+  if (/รีเลย์สตาร์ท|starter relay/.test(name)) return 80;
+  if (/หัวเทียน|ปลั๊กหัวเทียน|spark plug|sparkplug/.test(name)) return 70;
+  if (/คอยล์|ignition coil|starter coil|coil/.test(name)) return 60;
+  if (/ฟิวส์|fuse/.test(name)) return 50;
+  if (/สวิทซ์สตาร์ท|สวิตซ์สตาร์ท|start switch|starter switch/.test(name)) return 40;
+  if (/แผ่นชาร์จ|แผ่นชาร์ท|charger|charge/.test(name)) return 30;
+  return 0;
+};
 async function loadRelatedProducts() {
   const target = document.getElementById('relatedProducts');
   try {
     const response = await fetch(RELATED_PRODUCTS_API);
     if (!response.ok) throw new Error('Catalogue request failed');
     const catalogue = await response.json();
-    const products = (catalogue.products || []).filter(product => product && product.id && product.name && Number(product.availableQty) > 0);
+    const products = (catalogue.products || []).filter(product => product && product.id && product.name && Number(product.availableQty) > 0 && relatedScore(product) > 0);
     const selected = products.sort((a, b) => relatedScore(b) - relatedScore(a) || Number(b.availableQty || 0) - Number(a.availableQty || 0)).slice(0, 4);
     if (!selected.length) throw new Error('No related products');
     target.innerHTML = selected.map(product => {
